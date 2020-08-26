@@ -14,6 +14,10 @@
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="~/Content/css/style.css">
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+   
 </head>
 <body>
 
@@ -40,26 +44,57 @@
                                 </li>
 
                             </ul>
-                            
+
 
                         </li>
                     </ul>
                 }
-
-                </div>
+            </div>
+            
         </nav>
 
         <!-- Page Content  -->
-        <div id="content" class="p-4 p-md-5 pt-5">
-            <h2 class="mb-4">Sidebar #03</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        </div>
-    </div>
+        <div class="container">
+            <div class="panel panel-default">
+                <div class="panel-heading"><strong>Upload Files</strong> <small>Bootstrap files upload</small></div>
+                <div class="panel-body">
 
-    <script src="~/Content/js/jquery.min.js"></script>
-    <script src="~/Content/js/popper.js"></script>
-    <script src="~/Content/js/bootstrap.min.js"></script>
-    <script src="~/Content/js/main.js"></script>
+                    <!-- Standar Form -->
+                    <h4>Select files from your computer</h4>
+                    <form action="" method="post" enctype="multipart/form-data" id="js-upload-form">
+                        <div class="form-inline">
+                            <div class="form-group">
+                                <input type="file" name="files[]" id="js-upload-files" multiple>
+                            </div>
+                            <button type="submit" class="btn btn-sm btn-primary" id="js-upload-submit">Upload files</button>
+                        </div>
+                    </form>
+
+                  
+
+                    <!-- Progress Bar -->
+                    <div class="progress">
+                        <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
+                            <span class="sr-only">60% Complete</span>
+                        </div>
+                    </div>
+
+                    <!-- Upload Finished -->
+                    <div class="js-upload-finished">
+                        <h3>Processed files</h3>
+                        <div class="list-group">
+                            <a href="#" class="list-group-item list-group-item-success"><span class="badge alert-success pull-right">Success</span>image-01.jpg</a>
+                            <a href="#" class="list-group-item list-group-item-success"><span class="badge alert-success pull-right">Success</span>image-02.jpg</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> <!-- /container -->
+        </div>
+
+        <script src="~/Content/js/jquery.min.js"></script>
+        <script src="~/Content/js/popper.js"></script>
+        <script src="~/Content/js/bootstrap.min.js"></script>
+        <script src="~/Content/js/main.js"></script>
 </body>
 </html>
