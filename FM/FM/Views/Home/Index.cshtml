@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Filer.Data.Models.mFile>
+﻿@model IEnumerable<Filer.Data.Models.mDirectory>
 @{
     Layout = null;
 }
@@ -35,16 +35,15 @@
                 {
                     <ul class="list-unstyled components mb-5">
                         <li class="active">
-
-
                             <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">@item.Name</a>
+                            @foreach (var file in item.Files) {
                             <ul class="collapse list-unstyled" id="homeSubmenu">
                                 <li>
-                                    <a href="#">@item.Name</a>
+                                    <a href="#">@file.Name</a>
                                 </li>
 
                             </ul>
-
+                            }
 
                         </li>
                     </ul>

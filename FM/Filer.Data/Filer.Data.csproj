@@ -90,34 +90,38 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Models\mDirectory.cs" />
     <Compile Include="Models\mFile.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\IFile.cs" />
     <Compile Include="Services\IFileData.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Data\Screenshot %281%29.png" />
-    <Content Include="Data\Screenshot %2810%29.png" />
-    <Content Include="Data\Screenshot %2811%29.png" />
-    <Content Include="Data\Screenshot %2812%29.png" />
-    <Content Include="Data\Screenshot %2813%29.png" />
-    <Content Include="Data\Screenshot %2814%29.png" />
-    <Content Include="Data\Screenshot %2815%29.png" />
-    <Content Include="Data\Screenshot %2816%29.png" />
-    <Content Include="Data\Screenshot %2817%29.png" />
-    <Content Include="Data\Screenshot %2819%29.png" />
-    <Content Include="Data\Screenshot %282%29.png" />
-    <Content Include="Data\Screenshot %2820%29.png" />
-    <Content Include="Data\Screenshot %2821%29.png" />
-    <Content Include="Data\Screenshot %2822%29.png" />
-    <Content Include="Data\Screenshot %283%29.png" />
-    <Content Include="Data\Screenshot %284%29.png" />
+    <Content Include="Data\Screenshots\Screenshot %281%29.png" />
+    <Content Include="Data\Screenshots\Screenshot %2810%29.png" />
+    <Content Include="Data\Screenshots\Screenshot %2811%29.png" />
+    <Content Include="Data\Screenshots\Screenshot %2812%29.png" />
+    <Content Include="Data\Screenshots\Screenshot %2813%29.png" />
+    <Content Include="Data\Screenshots\Screenshot %2814%29.png" />
+    <Content Include="Data\Screenshots\Screenshot %2815%29.png" />
+    <Content Include="Data\Screenshots\Screenshot %2816%29.png" />
+    <Content Include="Data\Screenshots\Screenshot %2817%29.png" />
+    <Content Include="Data\Screenshots\Screenshot %2819%29.png" />
+    <Content Include="Data\Screenshots\Screenshot %282%29.png" />
+    <Content Include="Data\Screenshots\Screenshot %2820%29.png" />
+    <Content Include="Data\Screenshots\Screenshot %2821%29.png" />
+    <Content Include="Data\Screenshots\Screenshot %2822%29.png" />
+    <Content Include="Data\Screenshots\Screenshot %283%29.png" />
+    <Content Include="Data\Screenshots\Screenshot %284%29.png" />
     <Content Include="Data\Screenshot %285%29.png" />
     <Content Include="Data\Screenshot %287%29.png" />
     <Content Include="Data\Screenshot %288%29.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Data\Pics\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

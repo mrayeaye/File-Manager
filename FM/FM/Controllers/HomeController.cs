@@ -19,8 +19,7 @@ namespace FM.Controllers
        
         public ActionResult Index()
         {
-            var model = db.getAllFiles();
-            Console.WriteLine(db.getAllFiles());
+            var model = db.getAllDirectories();
             if (model == null)
                 return View("Not Found");
             return View(model);

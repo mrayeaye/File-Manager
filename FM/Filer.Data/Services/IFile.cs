@@ -10,6 +10,7 @@ namespace Filer.Data.Services
     public interface IFile
     {
         IEnumerable<mFile> getAllFiles();
+        IEnumerable<mDirectory> getAllDirectories();
 
     }
 }

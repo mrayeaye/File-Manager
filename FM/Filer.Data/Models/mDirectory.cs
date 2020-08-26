@@ -6,12 +6,10 @@ using System.Threading.Tasks;
 
 namespace Filer.Data.Models
 {
-    public class mFile
+    public class mDirectory
     {
-       
         public string Name { get; set; }
-        public long Size { get; set; }
-        public string Dir { get; set; }
-       
+        public int FilesCount { get; set; }
+       public  IEnumerable<mFile> Files { get; set; }
     }
 }
