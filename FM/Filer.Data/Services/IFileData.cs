@@ -14,7 +14,7 @@ namespace Filer.Data.Services
 {
     public class IFileData : IFile
     {
-        List<mFile> files;
+        List<mFile> files = new List<mFile>();
 
         public IFileData()
         {
@@ -24,10 +24,14 @@ namespace Filer.Data.Services
             {
                 FileInfo fi = new FileInfo(file);
                 
-                files = new List<mFile>()
-                {
-                    new mFile{Name = fi.Name,Size = fi.Length}
-                };
+                //files = new List<mFile>()
+                //{
+                //    new mFile{Name = fi.Name,Size = fi.Length}
+                //};
+
+                mFile f = new mFile();
+                f.Name = fi.Name; f.Size = fi.Length;
+                files.Add(f);
             }
         }
         public IEnumerable<mFile> getAllFiles()
