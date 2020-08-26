@@ -30,15 +30,16 @@
                 <ul class="list-unstyled components mb-5">
                     <li class="active">
                         
-                        
-                            <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">hh</a>
+                        @foreach (var item in Model)
+                        {
+                            <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">@item.Name</a>
                             <ul class="collapse list-unstyled" id="homeSubmenu">
                                 <li>
-                                    <a href="#">EX</a>
+                                    <a href="#">@item.Name</a>
                                 </li>
 
                             </ul>
-                        
+                        }
 
                     </li>
                 </ul>          

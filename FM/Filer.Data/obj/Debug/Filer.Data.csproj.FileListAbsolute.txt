@@ -37,4 +37,3 @@ C:\Users\Ahmed Saad\source\repos\File-Manager\FM\Filer.Data\bin\Debug\Autofac.In
 C:\Users\Ahmed Saad\source\repos\File-Manager\FM\Filer.Data\bin\Debug\Newtonsoft.Json.xml
 C:\Users\Ahmed Saad\source\repos\File-Manager\FM\Filer.Data\bin\Debug\System.Net.Http.Formatting.xml
 C:\Users\Ahmed Saad\source\repos\File-Manager\FM\Filer.Data\bin\Debug\System.Web.Http.xml
-C:\Users\Ahmed Saad\source\repos\File-Manager\FM\Filer.Data\obj\Debug\Filer.Data.csprojAssemblyReference.cache
