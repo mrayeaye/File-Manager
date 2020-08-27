@@ -37,4 +37,3 @@ C:\Users\Ahmed Saad\source\repos\File-Manager\FM\Filer.Data\obj\Debug\Filer.Data
 C:\Users\Ahmed Saad\source\repos\File-Manager\FM\Filer.Data\obj\Debug\Filer.Data.csproj.CopyComplete
 C:\Users\Ahmed Saad\source\repos\File-Manager\FM\Filer.Data\obj\Debug\Filer.Data.dll
 C:\Users\Ahmed Saad\source\repos\File-Manager\FM\Filer.Data\obj\Debug\Filer.Data.pdb
-C:\Users\Ahmed Saad\source\repos\File-Manager\FM\Filer.Data\obj\Debug\Filer.Data.csprojAssemblyReference.cache

@@ -1,3 +1,8 @@
+C:\Users\Ahmed Saad\source\repos\File-Manager\FM\FM\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\Ahmed Saad\source\repos\File-Manager\FM\FM\bin\roslyn\System.Net.Sockets.dll
+C:\Users\Ahmed Saad\source\repos\File-Manager\FM\FM\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+C:\Users\Ahmed Saad\source\repos\File-Manager\FM\FM\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Users\Ahmed Saad\source\repos\File-Manager\FM\FM\bin\roslyn\System.Text.Encoding.CodePages.dll
 C:\Users\Ahmed Saad\source\repos\File-Manager\FM\FM\bin\FM.dll.config
 C:\Users\Ahmed Saad\source\repos\File-Manager\FM\FM\bin\FM.dll
 C:\Users\Ahmed Saad\source\repos\File-Manager\FM\FM\bin\FM.pdb
@@ -12,7 +17,6 @@ C:\Users\Ahmed Saad\source\repos\File-Manager\FM\FM\bin\roslyn\Microsoft.CodeAna
 C:\Users\Ahmed Saad\source\repos\File-Manager\FM\FM\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
 C:\Users\Ahmed Saad\source\repos\File-Manager\FM\FM\bin\roslyn\Microsoft.CodeAnalysis.dll
 C:\Users\Ahmed Saad\source\repos\File-Manager\FM\FM\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
-C:\Users\Ahmed Saad\source\repos\File-Manager\FM\FM\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
 C:\Users\Ahmed Saad\source\repos\File-Manager\FM\FM\bin\roslyn\Microsoft.CSharp.Core.targets
 C:\Users\Ahmed Saad\source\repos\File-Manager\FM\FM\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
 C:\Users\Ahmed Saad\source\repos\File-Manager\FM\FM\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
@@ -31,14 +35,10 @@ C:\Users\Ahmed Saad\source\repos\File-Manager\FM\FM\bin\roslyn\System.IO.Compres
 C:\Users\Ahmed Saad\source\repos\File-Manager\FM\FM\bin\roslyn\System.IO.FileSystem.dll
 C:\Users\Ahmed Saad\source\repos\File-Manager\FM\FM\bin\roslyn\System.IO.FileSystem.Primitives.dll
 C:\Users\Ahmed Saad\source\repos\File-Manager\FM\FM\bin\roslyn\System.Net.Http.dll
-C:\Users\Ahmed Saad\source\repos\File-Manager\FM\FM\bin\roslyn\System.Net.Sockets.dll
 C:\Users\Ahmed Saad\source\repos\File-Manager\FM\FM\bin\roslyn\System.Reflection.Metadata.dll
-C:\Users\Ahmed Saad\source\repos\File-Manager\FM\FM\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
 C:\Users\Ahmed Saad\source\repos\File-Manager\FM\FM\bin\roslyn\System.Security.Cryptography.Algorithms.dll
 C:\Users\Ahmed Saad\source\repos\File-Manager\FM\FM\bin\roslyn\System.Security.Cryptography.Encoding.dll
 C:\Users\Ahmed Saad\source\repos\File-Manager\FM\FM\bin\roslyn\System.Security.Cryptography.Primitives.dll
-C:\Users\Ahmed Saad\source\repos\File-Manager\FM\FM\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
-C:\Users\Ahmed Saad\source\repos\File-Manager\FM\FM\bin\roslyn\System.Text.Encoding.CodePages.dll
 C:\Users\Ahmed Saad\source\repos\File-Manager\FM\FM\bin\roslyn\System.Threading.Tasks.Extensions.dll
 C:\Users\Ahmed Saad\source\repos\File-Manager\FM\FM\bin\roslyn\System.ValueTuple.dll
 C:\Users\Ahmed Saad\source\repos\File-Manager\FM\FM\bin\roslyn\System.Xml.ReaderWriter.dll
