@@ -21,6 +21,8 @@ namespace Filer.Data.Services
 
             string[] fis = Directory.GetFiles("C:/Users/Ahmed Saad/source/repos/File-Manager/FM/Filer.Data/Data");
             string[] dirs = Directory.GetDirectories("C:/Users/Ahmed Saad/source/repos/File-Manager/FM/Filer.Data/Data");
+
+            // Logic to get root files in "Data" folder
             foreach (var file in fis)
             {
                 FileInfo fi = new FileInfo(file);
@@ -28,6 +30,12 @@ namespace Filer.Data.Services
                 f.Name = fi.Name; f.Size = fi.Length; f.Dir = fi.DirectoryName;
                 files.Add(f);
             }
+            mDirectory root = new mDirectory();
+            root.Name = "Data"; root.FilesCount = files.Count; root.Files = files;
+            directories.Add(root);
+
+
+            // Logic to get all folders and files inside
             foreach (var dir in dirs)
             {
                 DirectoryInfo di = new DirectoryInfo(dir);

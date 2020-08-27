@@ -33,17 +33,28 @@
                 <h1><a class="logo">Filer</a></h1>
                 @foreach (var item in Model)
                 {
+
                     <ul class="list-unstyled components mb-5">
                         <li class="active">
+                            @if (item.Name == "Data")
+                            {
+                                foreach (var file in item.Files)
+                                {<a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">@file.Name</a>}
+                        }
+                        else
+                        {
                             <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">@item.Name</a>
-                            @foreach (var file in item.Files) {
-                            <ul class="collapse list-unstyled" id="homeSubmenu">
-                                <li>
-                                    <a href="#">@file.Name</a>
-                                </li>
+                            foreach (var file in item.Files)
+                            {
+                                <ul class="collapse list-unstyled" id="homeSubmenu">
+                                    <li>
+                                        <a href="#">@file.Name</a>
+                                    </li>
 
-                            </ul>
+                                </ul>
                             }
+                        }
+
 
                         </li>
                     </ul>
