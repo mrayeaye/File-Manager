@@ -17,12 +17,25 @@ namespace FM.Controllers
             this.db = db;
         }
        
+        [HttpGet]
         public ActionResult Index()
         {
             var model = db.getAllDirectories();
             if (model == null)
                 return View("Not Found");
             return View(model);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Index(mFile file)
+        {
+            if (ModelState.IsValid)
+            {
+                db.addFiles(file);
+                RedirectToAction("Index");
+            }
+            return View();
         }
 
     }

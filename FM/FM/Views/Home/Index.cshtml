@@ -20,93 +20,98 @@
    
 </head>
 <body>
-
-    <div class="wrapper d-flex align-items-stretch">
-        <nav id="sidebar" class="active">
-            <div class="custom-menu">
-                <button type="button" id="sidebarCollapse" class="btn btn-primary">
-                    <i class="fa fa-bars"></i>
-                    <span class="sr-only">Toggle Menu</span>
-                </button>
-            </div>
-            <div class="p-4">
-                <h1><a class="logo">Filer</a></h1>
-                @{int i = 0;}
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        <div class="wrapper d-flex align-items-stretch">
+            <nav id="sidebar" class="active">
+                <div class="custom-menu">
+                    <button type="button" id="sidebarCollapse" class="btn btn-primary">
+                        <i class="fa fa-bars"></i>
+                        <span class="sr-only">Toggle Menu</span>
+                    </button>
+                </div>
+                <div class="p-4">
+                    <h1><a class="logo">Filer</a></h1>
+                    @{int i = 0;}
                     @foreach (var item in Model)
                     {
-                        i = i + 1; 
-                    <ul class="list-unstyled components mb-5">
-                        <li class="active">
-                            @if (item.Name == "Data")
-                            {
-                                foreach (var file in item.Files)
-                                {<a href="#MainMenu" data-toggle="false" aria-expanded="false" class="item">@file.Name</a>}
+                        i = i + 1;
+                        <ul class="list-unstyled components mb-5">
+                            <li class="active">
+                                @if (item.Name == "Data")
+                                {
+                                    foreach (var file in item.Files)
+                                    {<a href="#MainMenu" data-toggle="false" aria-expanded="false" class="item">@file.Name</a>}
                             }
                             else
-                            { string Tag1 = $"#homeSubmenu{i}";
-                                string Tag2 = $"homeSubmenu{i}";
-                            <a href= @Tag1  data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">@item.Name</a>
-                            foreach (var file in item.Files)
                             {
-                                <ul class="collapse list-unstyled"  id= @Tag2>
-                                    <li>
-                                        <a href="#">@file.Name</a>
-                                    </li>
+                                string Tag1 = $"#homeSubmenu{i}";
+                                string Tag2 = $"homeSubmenu{i}";
+                                <a href=@Tag1 data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">@item.Name</a>
+                                foreach (var file in item.Files)
+                                {
+                                    <ul class="collapse list-unstyled" id=@Tag2>
+                                        <li>
+                                            <a href="#">@file.Name</a>
+                                        </li>
 
-                                </ul>
+                                    </ul>
+                                }
                             }
-                        }
 
 
-                        </li>
-                    </ul>
-                }
-            </div>
-            
-        </nav>
+                            </li>
+                        </ul>
+                    }
+                </div>
 
-        <!-- Page Content  -->
-        <div class="container">
-            <div class="panel panel-default">
-                <div class="panel-heading"><strong>Upload Files</strong> <small>Bootstrap files upload</small></div>
-                <div class="panel-body">
+            </nav>
 
-                    <!-- Standar Form -->
-                    <h4>Select files from your computer</h4>
-                    <form action="" method="post" enctype="multipart/form-data" id="js-upload-form">
-                        <div class="form-inline">
-                            <div class="form-group">
-                                <input type="file" name="files[]" id="js-upload-files" multiple>
+            <!-- Page Content  -->
+            <div class="container">
+                <div class="panel panel-default">
+                    <div class="panel-heading"><strong>Upload Files</strong> <small>Bootstrap files upload</small></div>
+                    <div class="panel-body">
+
+                        <!-- Standar Form -->
+                        <h4>Select files from your computer</h4>
+                        <form action="" method="post" enctype="multipart/form-data" id="js-upload-form">
+                            <div class="form-inline">
+                                <div class="form-group">
+                                    <input type="file" name="files[]" id="js-upload-files" multiple>
+                                </div>
+                                <button type="submit" class="btn btn-sm btn-primary" id="js-upload-submit">Upload files</button>
                             </div>
-                            <button type="submit" class="btn btn-sm btn-primary" id="js-upload-submit">Upload files</button>
+                        </form>
+
+
+
+                        <!-- Progress Bar -->
+                        <div class="progress">
+                            <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
+                                <span class="sr-only">60% Complete</span>
+                            </div>
                         </div>
-                    </form>
 
-                  
-
-                    <!-- Progress Bar -->
-                    <div class="progress">
-                        <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
-                            <span class="sr-only">60% Complete</span>
-                        </div>
-                    </div>
-
-                    <!-- Upload Finished -->
-                    <div class="js-upload-finished">
-                        <h3>Processed files</h3>
-                        <div class="list-group">
-                            <a href="#" class="list-group-item list-group-item-success"><span class="badge alert-success pull-right">Success</span>image-01.jpg</a>
-                            <a href="#" class="list-group-item list-group-item-success"><span class="badge alert-success pull-right">Success</span>image-02.jpg</a>
+                        <!-- Upload Finished -->
+                        <div class="js-upload-finished">
+                            <h3>Processed files</h3>
+                            <div class="list-group">
+                                <a href="#" class="list-group-item list-group-item-success"><span class="badge alert-success pull-right">Success</span>image-01.jpg</a>
+                                <a href="#" class="list-group-item list-group-item-success"><span class="badge alert-success pull-right">Success</span>image-02.jpg</a>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div> <!-- /container -->
-        </div>
+            </div> <!-- /container -->
 
-        <script src="~/Content/js/jquery.min.js"></script>
-        <script src="~/Content/js/popper.js"></script>
-        <script src="~/Content/js/bootstrap.min.js"></script>
-        <script src="~/Content/js/main.js"></script>
+        </div>
+    }
+    <script src="~/Content/js/jquery.min.js"></script>
+    <script src="~/Content/js/popper.js"></script>
+    <script src="~/Content/js/bootstrap.min.js"></script>
+    <script src="~/Content/js/main.js"></script>
+    <script src="~/Content/js/upload.js"></script>
 </body>
 </html>

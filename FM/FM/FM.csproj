@@ -184,6 +184,7 @@
     <Content Include="Content\js\jquery.min.js" />
     <Content Include="Content\js\main.js" />
     <Content Include="Content\js\popper.js" />
+    <Content Include="Content\js\upload.js" />
     <Content Include="Data\Photos\screenshot.png" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />

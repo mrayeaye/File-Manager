@@ -12,5 +12,6 @@ namespace Filer.Data.Services
         IEnumerable<mFile> getAllFiles();
         IEnumerable<mDirectory> getAllDirectories();
 
+        void addFiles(mFile file);
     }
 }

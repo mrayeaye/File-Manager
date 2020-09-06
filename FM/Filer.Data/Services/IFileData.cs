@@ -54,6 +54,11 @@ namespace Filer.Data.Services
             }
         }
 
+        public void addFiles(mFile file)
+        {
+            files.Add(file);
+        }
+
         public IEnumerable<mDirectory> getAllDirectories()
         {
             return directories;

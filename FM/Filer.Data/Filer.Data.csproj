@@ -97,6 +97,15 @@
     <Compile Include="Services\IFileData.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Data\94242386_1541575302662264_9223077105745526784_n.jpg" />
+    <Content Include="Data\Camp Docs\Camp APply\075ca6e0fd977fb4de130f482c707ad1.png" />
+    <Content Include="Data\Camp Docs\Camp APply\87070bfdc35673a1e9acfa2e77170339.png" />
+    <Content Include="Data\Camp Docs\Camp APply\FSU34WEK81ULKV3.jpg" />
+    <Content Include="Data\Camp Docs\medical for camp_5.jpg" />
+    <Content Include="Data\Camp Docs\medical for sponsor_1.jpg" />
+    <Content Include="Data\Camp Docs\medical for sponsor_2.jpg" />
+    <Content Include="Data\Camp Docs\المناظر-الطبيعية-1-ثقف-نفسك.jpg" />
+    <Content Include="Data\Portofolio.txt" />
     <Content Include="Data\Screenshots\Screenshot %281%29.png" />
     <Content Include="Data\Screenshots\Screenshot %2810%29.png" />
     <Content Include="Data\Screenshots\Screenshot %2811%29.png" />
@@ -118,6 +127,22 @@
     <Content Include="Data\Screenshot %288%29.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Data\Ahmed Resume 2020 %281%29 %281%29.docx" />
+    <None Include="Data\Ahmed Resume 2020 %281%29.docx" />
+    <None Include="Data\Ahmed Resume 2020.docx" />
+    <None Include="Data\AhmedResume2020.docx" />
+    <None Include="Data\Camp Docs\2020 Federal Tax Form W-4.pdf" />
+    <None Include="Data\Camp Docs\2020 HFH Staff handbook and Technology Acknowledgment.pdf" />
+    <None Include="Data\Camp Docs\2020 HFH Summer Camps Staff Handbook.pdf" />
+    <None Include="Data\Camp Docs\2020 Staff Medical Form.pdf" />
+    <None Include="Data\Camp Docs\background check.pdf" />
+    <None Include="Data\Camp Docs\Camps Employee Personal and EEO Information Form.pdf" />
+    <None Include="Data\Camp Docs\I901_payment_confirmation_03082020.PDF" />
+    <None Include="Data\Camp Docs\medical for camp.pdf" />
+    <None Include="Data\Camp Docs\medical for sponsor.pdf" />
+    <None Include="Data\Camp Docs\Medical Form.pdf" />
+    <None Include="Data\passport.pdf" />
+    <None Include="Data\Profile.pdf" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
