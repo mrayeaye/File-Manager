@@ -35,8 +35,11 @@ namespace FM.Controllers
                 db.addFiles(file);
                 RedirectToAction("Index");
             }
+         
             return View();
         }
+
+        
 
     }
 }

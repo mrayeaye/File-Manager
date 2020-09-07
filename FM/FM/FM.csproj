@@ -179,10 +179,12 @@
     <Content Include="Content\css\bootstrap\mixins\_visibility.css" />
     <Content Include="Content\css\bootstrap\utilities\_stretched-link.css" />
     <Content Include="Content\css\bootstrap\_media.css" />
+    <Content Include="Content\css\MainPageStyle.css" />
     <Content Include="Content\css\style.css" />
     <Content Include="Content\js\bootstrap.min.js" />
     <Content Include="Content\js\jquery.min.js" />
     <Content Include="Content\js\main.js" />
+    <Content Include="Content\js\MainPage.js" />
     <Content Include="Content\js\popper.js" />
     <Content Include="Content\js\upload.js" />
     <Content Include="Data\Photos\screenshot.png" />
@@ -224,6 +226,7 @@
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\NotFound.cshtml" />
+    <Content Include="Views\Home\FolderView.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Api\" />
