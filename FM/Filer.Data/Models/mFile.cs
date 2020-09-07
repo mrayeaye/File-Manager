@@ -11,7 +11,8 @@ namespace Filer.Data.Models
        
         public string Name { get; set; }
         public long Size { get; set; }
-        public string Dir { get; set; }
+        public int Dir_Id { get; set; }
        
+        public Byte[] bytes { get; set; }
     }
 }
