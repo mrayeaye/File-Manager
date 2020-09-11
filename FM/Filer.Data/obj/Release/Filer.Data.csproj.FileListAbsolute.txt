@@ -33,8 +33,8 @@ C:\Users\Ahmed Saad\source\repos\File-Manager\FM\Filer.Data\bin\Release\System.W
 C:\Users\Ahmed Saad\source\repos\File-Manager\FM\Filer.Data\bin\Release\System.Web.WebPages.xml
 C:\Users\Ahmed Saad\source\repos\File-Manager\FM\Filer.Data\bin\Release\System.Web.WebPages.Deployment.xml
 C:\Users\Ahmed Saad\source\repos\File-Manager\FM\Filer.Data\bin\Release\System.Web.WebPages.Razor.xml
-C:\Users\Ahmed Saad\source\repos\File-Manager\FM\Filer.Data\obj\Release\Filer.Data.csprojAssemblyReference.cache
 C:\Users\Ahmed Saad\source\repos\File-Manager\FM\Filer.Data\obj\Release\Filer.Data.csproj.CoreCompileInputs.cache
 C:\Users\Ahmed Saad\source\repos\File-Manager\FM\Filer.Data\obj\Release\Filer.Data.csproj.CopyComplete
 C:\Users\Ahmed Saad\source\repos\File-Manager\FM\Filer.Data\obj\Release\Filer.Data.dll
 C:\Users\Ahmed Saad\source\repos\File-Manager\FM\Filer.Data\obj\Release\Filer.Data.pdb
+C:\Users\Ahmed Saad\source\repos\File-Manager\FM\Filer.Data\obj\Release\Filer.Data.csprojAssemblyReference.cache

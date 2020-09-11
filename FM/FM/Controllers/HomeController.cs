@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.IO;
 
 namespace FM.Controllers
 {
@@ -20,26 +21,42 @@ namespace FM.Controllers
         [HttpGet]
         public ActionResult Index()
         {
-            var model = db.getAllDirectories();
-            if (model == null)
-                return View("Not Found");
-            return View(model);
+            //var model = db.getAllDirectories();
+            //if (model == null)
+            //    return View("Not Found");
+            return View();
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Index(mFile file)
+        public ActionResult Index(HttpPostedFileBase DeFile) 
         {
-            if (ModelState.IsValid)
+            //if (ModelState.IsValid)
+            // {
+            //     db.addFiles(file);
+            //      RedirectToAction("Index");
+            // }
+            mFile UploadedFile = new mFile();
+            if (DeFile.ContentLength > 0)
             {
-                db.addFiles(file);
-                RedirectToAction("Index");
+                string FileName = Path.GetFileName(DeFile.FileName);
+                UploadedFile.Name = FileName;
+                UploadedFile.Size = DeFile.ContentLength;
+                Stream stream = DeFile.InputStream;
+                BinaryReader br = new BinaryReader(stream);
+                UploadedFile.bytes = br.ReadBytes((int)stream.Length);
+                UploadedFile.Dir_Id = -1;
+                db.addFiles(UploadedFile);
+                string FolderPath = Path.Combine(Server.MapPath("~/Data"), FileName);
+                DeFile.SaveAs(FolderPath);
+                
             }
-         
+            ViewBag.Message = "File Received";
             return View();
         }
 
-        
+
+
 
     }
 }

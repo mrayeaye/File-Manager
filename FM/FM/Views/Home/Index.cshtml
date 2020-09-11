@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Filer.Data.Models.mDirectory>
+﻿@model IEnumerable<Filer.Data.Models.mFile>
 @{
     Layout = null;
 }
@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="~/Content/css/style.css">
     <link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+ 
 
     <link rel="stylesheet" href="~/Content/css/MainPageStyle.css">
     <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
@@ -27,11 +27,10 @@
 
 </head>
 <body>
-    @using (Html.BeginForm())
-    {
+    
         @Html.AntiForgeryToken()
         <div class="wrapper d-flex align-items-stretch">
-            <nav id="sidebar" class="active">
+            <nav id="sidebar" class="active" >
                 <div class="custom-menu">
                     <button type="button" id="sidebarCollapse" class="btn btn-primary">
                         <i class="fa fa-bars"></i>
@@ -40,52 +39,93 @@
                 </div>
                 <div class="p-4">
                     <h1><a class="logo">Filer</a></h1>
-                    @{int i = 0;}
-                    @foreach (var item in Model)
-                    {
-                        i = i + 1;
-                        <ul class="list-unstyled components mb-5">
-                            <li class="active">
-                                @if (item.Name == "Data")
-                                {
-                                    continue;
-                                }
-                                @{string Tag1 = $"#homeSubmenu{i}";
-                                string Tag2 = $"homeSubmenu{i}"; }
-                                <a href=@Tag1 data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">@item.Name</a>
-                                @foreach (var file in item.Files)
-                                {
-                                    <ul class="collapse list-unstyled" id=@Tag2>
-                                        <li>
-                                            <a href="#">@file.Name</a>
-                                        </li>
-
-                                    </ul>
-                                }
-                            
 
 
-                            </li>
-                        </ul>
-                    }
+                    <ul class="list-unstyled components mb-5">
+                        <li class="active">
+
+                            @{string Tag1 = $"#homeSubmenu";
+                                string Tag2 = $"homeSubmenu"; }
+                            <a href=@Tag1 data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Place Holder</a>
+
+                            <ul class="collapse list-unstyled" id=@Tag2>
+                                <li>
+                                    <a href="#">File Place Holder</a>
+                                </li>
+
+                            </ul>
+
+
+
+
+                        </li>
+                    </ul>
+
                 </div>
 
             </nav>
+            <section>
 
-            <div class="main">
-                <h1>My documents</h1>
-                <div class="input-wrap"><input id="searchbar" type="search" placeholder="Search a file..." /><i class="fa fa-search" aria-hidden="true"></i></div>
-                <div class="left">
-                    <div class="top-droppable folder tooltiper tooltiper-up" data-tooltip="0 file" id="folder1"><i class="fa fa-folder" aria-hidden="true"></i><i class="fa fa-check" aria-hidden="true"></i><p>Folder 1</p></div>
-                    <div class="top-droppable folder tooltiper tooltiper-up" data-tooltip="0 file" id="folder2"><i class="fa fa-folder" aria-hidden="true"></i><i class="fa fa-check" aria-hidden="true"></i><p>Folder 2</p></div>
-                    <div class="top-droppable folder tooltiper tooltiper-up" data-tooltip="0 file" id="folder3"><i class="fa fa-folder" aria-hidden="true"></i><i class="fa fa-check" aria-hidden="true"></i><p>Folder 3</p></div>
-                    <div class="top-droppable folder tooltiper tooltiper-up" data-tooltip="0 file" id="folder4"><i class="fa fa-folder" aria-hidden="true"></i><i class="fa fa-check" aria-hidden="true"></i><p>Folder 4</p></div>
-                    <div class="top-droppable folder tooltiper tooltiper-up" data-tooltip="0 file" id="folder5"><i class="fa fa-folder" aria-hidden="true"></i><i class="fa fa-check" aria-hidden="true"></i><p>Folder 5</p></div>
+
+                <div class="main">
+                    <h1>My documents</h1>
+                    <div class="input-wrap"><input id="searchbar" type="search" placeholder="Search a file..." /><i class="fa fa-search" aria-hidden="true"></i></div>
+                    <div class="left">
+                        <div class="top-droppable folder tooltiper tooltiper-up" data-tooltip="0 file" id="folder1"><i class="fa fa-folder" aria-hidden="true"></i><i class="fa fa-check" aria-hidden="true"></i><p>Folder 1</p></div>
+                        <div class="top-droppable folder tooltiper tooltiper-up" data-tooltip="0 file" id="folder2"><i class="fa fa-folder" aria-hidden="true"></i><i class="fa fa-check" aria-hidden="true"></i><p>Folder 2</p></div>
+                        <div class="top-droppable folder tooltiper tooltiper-up" data-tooltip="0 file" id="folder3"><i class="fa fa-folder" aria-hidden="true"></i><i class="fa fa-check" aria-hidden="true"></i><p>Folder 3</p></div>
+                        <div class="top-droppable folder tooltiper tooltiper-up" data-tooltip="0 file" id="folder4"><i class="fa fa-folder" aria-hidden="true"></i><i class="fa fa-check" aria-hidden="true"></i><p>Folder 4</p></div>
+                        <div class="top-droppable folder tooltiper tooltiper-up" data-tooltip="0 file" id="folder5"><i class="fa fa-folder" aria-hidden="true"></i><i class="fa fa-check" aria-hidden="true"></i><p>Folder 5</p></div>
+                    </div>
                 </div>
-            </div>
 
+                <div class="right">
+                    <br /><b />
+                    @using (Html.BeginForm("Index", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                    {
+                        @Html.AntiForgeryToken()
+                        <div>
+                            @Html.TextBox("DeFile", "", new { type = "File" })
+
+                            <input type="submit" value="Upload" />
+                            @{
+                                if (ViewBag.Message != null)
+                                {
+                                    @ViewBag.Message
+                                }
+                            }
+                        </div>
+                    }
+                </div>
+
+                    <div class="top-droppable folder-content easeout2 closed" id="folder1-content">
+                        <div class="close-folder-content"><i class="fa fa-times" aria-hidden="true"></i></div>
+                        <h2><i class="fa fa-folder" aria-hidden="true"></i><span>Folder 1</span></h2>
+                    </div>
+
+                    <div class="top-droppable folder-content easeout2 closed" id="folder2-content">
+                        <div class="close-folder-content"><i class="fa fa-times" aria-hidden="true"></i></div>
+                        <h2><i class="fa fa-folder" aria-hidden="true"></i><span>Folder 2</span></h2>
+                    </div>
+
+                    <div class="top-droppable folder-content easeout2 closed" id="folder3-content">
+                        <div class="close-folder-content"><i class="fa fa-times" aria-hidden="true"></i></div>
+                        <h2><i class="fa fa-folder" aria-hidden="true"></i><span>Folder 3</span></h2>
+                    </div>
+
+                    <div class="top-droppable folder-content easeout2 closed" id="folder4-content">
+                        <div class="close-folder-content"><i class="fa fa-times" aria-hidden="true"></i></div>
+                        <h2><i class="fa fa-folder" aria-hidden="true"></i><span>Folder 4</span></h2>
+                    </div>
+
+                    <div class="top-droppable folder-content easeout2 closed" id="folder5-content">
+                        <div class="close-folder-content"><i class="fa fa-times" aria-hidden="true"></i></div>
+                        <h2><i class="fa fa-folder" aria-hidden="true"></i><span>Folder 5</span></h2>
+                    </div>
+            </section>
         </div>
-    }
+
+    
     <script src="~/Content/js/MainPage.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
