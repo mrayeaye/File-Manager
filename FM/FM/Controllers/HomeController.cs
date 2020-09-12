@@ -37,7 +37,9 @@ namespace FM.Controllers
             //      RedirectToAction("Index");
             // }
             mFile UploadedFile = new mFile();
-            if (DeFile.ContentLength > 0)
+            if (DeFile == null)
+                ViewBag.Message = "No File Selected";
+            else if (DeFile.ContentLength > 0)
             {
                 string FileName = Path.GetFileName(DeFile.FileName);
                 UploadedFile.Name = FileName;
@@ -49,9 +51,14 @@ namespace FM.Controllers
                 db.addFiles(UploadedFile);
                 string FolderPath = Path.Combine(Server.MapPath("~/Data"), FileName);
                 DeFile.SaveAs(FolderPath);
-                
+                ViewBag.Message = "File Received";
             }
-            ViewBag.Message = "File Received";
+            
+            return View();
+        }
+
+        public ActionResult Storage()
+        {
             return View();
         }
 
