@@ -10,8 +10,7 @@ using System.Runtime.Remoting.Channels;
 using System.Text;
 using System.Threading.Tasks;
 using System.Web;
-
-
+using System.Windows.Forms;
 
 namespace Filer.Data.Services
 {
@@ -120,7 +119,30 @@ namespace Filer.Data.Services
 
         public IEnumerable<mFile> getAllFiles()
         {
-            
+            mFile file = new mFile();
+            string cs = ConfigurationManager.ConnectionStrings["DBCS"].ConnectionString;
+            using (SqlConnection con = new SqlConnection(cs))
+            {
+                SqlCommand cmd = new SqlCommand("Select * FROM AllFiles", con);
+                con.Open();
+                SqlCommand check = new SqlCommand("Select Count(Id) from AllFiles", con);
+                int rows = (int)check.ExecuteScalar();
+                SqlDataReader reader = cmd.ExecuteReader();
+                
+                
+                if (rows > 0) {
+                    for (int i=1;i<=rows;i++)
+                    {
+                        Stream stream = reader.GetStream(i);
+                        BinaryReader br = new BinaryReader(stream);
+                        file.bytes = br.ReadBytes((int)stream.Length);
+                        
+                    }
+                }
+                    
+                    files.Add(file);
+                
+            }
             return files;
         }
     }

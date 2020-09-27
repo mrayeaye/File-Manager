@@ -29,7 +29,7 @@ namespace FM.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Index(HttpPostedFileBase DeFile) 
+        public ActionResult Landing(HttpPostedFileBase DeFile) 
         {
             //if (ModelState.IsValid)
             // {
@@ -50,7 +50,7 @@ namespace FM.Controllers
                 UploadedFile.Dir_Id = -1;
                 db.addFiles(UploadedFile);
                 string FolderPath = Path.Combine(Server.MapPath("~/Data"), FileName);
-                DeFile.SaveAs(FolderPath);
+                //DeFile.SaveAs(FolderPath);
                 ViewBag.Message = "File Received";
             }
             
@@ -59,6 +59,14 @@ namespace FM.Controllers
 
         public ActionResult Storage()
         {
+            var model = db.getAllFiles();          
+                return View(model);          
+        }
+
+        [HttpGet]
+        public ActionResult Landing()
+        {
+            
             return View();
         }
 

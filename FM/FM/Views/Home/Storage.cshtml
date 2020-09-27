@@ -1,9 +1,18 @@
-﻿@model Filer.Data.Models.mFile
-
+﻿@model IEnumerable<Filer.Data.Models.mFile>
 @{
     ViewBag.Title = "Storage";
     Layout = null;
 }
 
 <h2>Storage</h2>
+<div>
+    <ul class="list-unstyled components mb-5">
+        <li class="active">
+            @foreach (var file in Model)
+            {
+                <a href=home data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">@file.Size</a>
+            }
+        </li>
+    </ul>
+</div>
 

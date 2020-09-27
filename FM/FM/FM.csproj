@@ -169,6 +169,12 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\assets\css\modal.css" />
+    <Content Include="Content\assets\css\style.css" />
+    <Content Include="Content\assets\css\upload.css" />
+    <Content Include="Content\assets\js\js.js" />
+    <Content Include="Content\assets\js\modal.js" />
+    <Content Include="Content\assets\js\upload.js" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -180,7 +186,7 @@
     <Content Include="Content\css\bootstrap\utilities\_stretched-link.css" />
     <Content Include="Content\css\bootstrap\_media.css" />
     <Content Include="Content\css\MainPageStyle.css" />
-    <Content Include="Content\css\style.css" />
+    <Content Include="Content\css\deStyle.css" />
     <Content Include="Content\js\bootstrap.min.js" />
     <Content Include="Content\js\jquery.min.js" />
     <Content Include="Content\js\main.js" />
@@ -227,6 +233,7 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\NotFound.cshtml" />
     <Content Include="Views\Home\Storage.cshtml" />
+    <Content Include="Views\Home\Landing.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Api\" />
