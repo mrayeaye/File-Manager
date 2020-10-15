@@ -5,6 +5,9 @@ const fileTempl = document.getElementById("file-template"),
 // use to store pre selected files
 let FILES = {};
 
+
+
+
 // check if file is of type image and prepend the initialied
 // template to the target element
 function addFile(target, file) {
@@ -101,7 +104,43 @@ gallery.onclick = ({ target }) => {
 
 // print all selected files
 document.getElementById("submit").onclick = () => {
-    alert(`Submitted Files:\n${JSON.stringify(FILES)}`);
+    //alert(`Submitted Files:\n${JSON.stringify(FILES)}`);
+
+    // Checking whether FormData is available in browser  
+    if (window.FormData !== undefined) {
+
+        var fileUpload = $("#hidden-input").get(0);
+        var files = fileUpload.files;
+
+        // Create FormData object  
+        var fileData = new FormData();
+
+        // Looping over all files and add it to FormData object  
+        for (var i = 0; i < files.length; i++) {
+            objectURL = URL.createObjectURL(files[i]);
+           // fileData.append("ss", FILES[objectURL]);
+            fileData.append(files[i].name, files[i]);
+        }
+        
+
+        // Adding one more key to FormData object  
+        //fileData.append('username', 'Manas');       
+        $.ajax({
+            url: '/Home/Landing',
+            type: "POST",
+            contentType: false, // Not to set any content header  
+            processData: false, // Not to process data  
+            data: fileData,
+            success: function (result) {
+                alert(result);
+            },
+            error: function (err) {
+                alert(err.statusText);             
+            }
+        });
+    } else {
+        alert("FormData is not supported.");
+    }  
     console.log(FILES);
 };
 
