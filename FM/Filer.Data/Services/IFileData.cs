@@ -128,7 +128,7 @@ namespace Filer.Data.Services
                 SqlCommand check = new SqlCommand("Select Count(Id) from AllFiles", con);
                 int rows = (int)check.ExecuteScalar();
                 SqlDataReader reader = cmd.ExecuteReader();
-                
+                Console.WriteLine(rows + "$$$$$$$$$$$$$$$$@*&(*&#^(*&#^(&#^(#*@)&@)*@&)(@&)@(*&@)@*&)(*@");
                 
                 if (rows > 0) {
                     for (int i=1;i<=rows;i++)
@@ -136,11 +136,11 @@ namespace Filer.Data.Services
                         Stream stream = reader.GetStream(i);
                         BinaryReader br = new BinaryReader(stream);
                         file.bytes = br.ReadBytes((int)stream.Length);
-                        
+                        files.Add(file);
                     }
                 }
                     
-                    files.Add(file);
+                    //files.Add(file);
                 
             }
             return files;

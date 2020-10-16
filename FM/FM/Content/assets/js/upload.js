@@ -4,7 +4,7 @@ const fileTempl = document.getElementById("file-template"),
 
 // use to store pre selected files
 let FILES = {};
-
+let deleteflag = 0;
 
 
 
@@ -13,7 +13,7 @@ let FILES = {};
 function addFile(target, file) {
     const isImage = file.type.match("image.*"),
         objectURL = URL.createObjectURL(file);
-
+    
     const clone = isImage ?
         imageTempl.content.cloneNode(true) :
         fileTempl.content.cloneNode(true);
@@ -37,7 +37,10 @@ function addFile(target, file) {
     empty.classList.add("hidden");
     target.prepend(clone);
 
-    FILES[objectURL] = file;
+    FILES[file.name] = file;
+    console.log(file.name);
+   
+  
 }
 
 const gallery = document.getElementById("gallery"),
@@ -46,11 +49,14 @@ const gallery = document.getElementById("gallery"),
 // click the hidden input of type file if the visible button is clicked
 // and capture the selected files
 const hidden = document.getElementById("hidden-input");
-document.getElementById("button").onclick = () => hidden.click();
+document.getElementById("button").onclick = () => {
+    hidden.click(); deleteflag = 0;
+}
 hidden.onchange = (e) => {
     for (const file of e.target.files) {
         addFile(gallery, file);
     }
+    
 };
 
 // use to check if a file is being dragged
@@ -95,10 +101,12 @@ function dragOverHandler(e) {
 // fron the waste buckets in the file preview cards
 gallery.onclick = ({ target }) => {
     if (target.classList.contains("delete")) {
+       
         const ou = target.dataset.target;
         document.getElementById(ou).remove(ou);
         gallery.children.length === 1 && empty.classList.remove("hidden");
         delete FILES[ou];
+        console.log(ou);
     }
 };
 
@@ -111,39 +119,66 @@ document.getElementById("submit").onclick = () => {
 
         var fileUpload = $("#hidden-input").get(0);
         var files = fileUpload.files;
-
+       
         // Create FormData object  
-        var fileData = new FormData();
-
-        // Looping over all files and add it to FormData object  
-        for (var i = 0; i < files.length; i++) {
-            objectURL = URL.createObjectURL(files[i]);
-           // fileData.append("ss", FILES[objectURL]);
-            fileData.append(files[i].name, files[i]);
-        }
         
+        try {
+            // Looping over all files and add it to FormData object  
+            if (deleteflag == 0) {
+                for (var i = 0; i < files.length; i++) {
+                    var fileData = new FormData();
+                    // objectURL = URL.createObjectURL(files[i]);
+                    // fileData.append("ss", FILES[objectURL]);
+                    console.log(FILES[files[i].name]);
+                    fileData.append("blob", FILES[files[i].name], files[i].name);
 
+
+                    var xhttp = new XMLHttpRequest();
+
+                    xhttp.open("POST", "/Home/Landing", false);
+
+                    xhttp.onreadystatechange = function () {
+
+                        if (this.readyState == 4 && this.status == 200) {
+                            Myresponse = JSON.parse(this.responseText)
+                            console.log(Myresponse);
+
+                        }
+                    };
+
+                    xhttp.send(fileData);
+
+                }
+            }
+        }
+        catch (ex) {
+            console.log(ex.responseText);
+        }
         // Adding one more key to FormData object  
         //fileData.append('username', 'Manas');       
-        $.ajax({
-            url: '/Home/Landing',
-            type: "POST",
-            contentType: false, // Not to set any content header  
-            processData: false, // Not to process data  
-            data: fileData,
-            success: function (result) {
-                alert(result);
-            },
-            error: function (err) {
-                alert(err.statusText);             
-            }
-        });
-    } else {
-        alert("FormData is not supported.");
+    //    $.ajax({
+    //        url: '/Home/Landing',
+    //        type: "POST",
+    //        contentType: false, // Not to set any content header  
+    //        processData: false, // Not to process data  
+    //        data: fileData,
+    //        success: function (result) {
+    //            alert(result);
+    //        },
+    //        error: function (err) {
+    //            alert(err.statusText);             
+    //        }
+    //    });
+    //} else {
+    //    alert("FormData is not supported.");
     }  
     console.log(FILES);
 };
+function loadDoc() {
 
+    
+
+}
 // clear entire selection
 document.getElementById("cancel").onclick = () => {
     while (gallery.children.length > 0) {
@@ -152,4 +187,5 @@ document.getElementById("cancel").onclick = () => {
     FILES = {};
     empty.classList.remove("hidden");
     gallery.append(empty);
+    deleteflag = 1;
 };
