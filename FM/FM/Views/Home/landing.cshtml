@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Filer.Data.Models.mFile>
+﻿@model IEnumerable<Filer.Data.Models.mDirectory>
 @{
     Layout = null;
 }
@@ -191,9 +191,12 @@
 
                                         <div class="mx-5">
                                             <h4 class="text-2xl font-semibold text-gray-700">
-                                                @foreach (var item in Model)
+                                                @foreach (var files in Model)
                                                 {
-                                                    @item.Name;
+                                                    foreach (var file in files.Files)
+                                                    {
+                                                    @file.Name;
+                                                    }
                                                 }
 
                                             </h4>
@@ -315,7 +318,7 @@
                                                 <p class="mb-3 font-semibold text-gray-900 flex flex-wrap justify-center">
                                                     <span>Drag and drop your</span>&nbsp;<span>files anywhere or</span>
                                                 </p>
-                                                
+
                                                 <input id="hidden-input"
                                                        type="file"
                                                        multiple
