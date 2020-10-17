@@ -128,9 +128,9 @@ document.getElementById("submit").onclick = () => {
                 for (var i = 0; i < files.length; i++) {
                     var fileData = new FormData();
                     // objectURL = URL.createObjectURL(files[i]);
-                    // fileData.append("ss", FILES[objectURL]);
+                    fileData.append(files[i].name, files[i]);
                     console.log(FILES[files[i].name]);
-                    fileData.append("blob", FILES[files[i].name], files[i].name);
+                    //fileData.append("blob", FILES[files[i].name], files[i].name);
 
 
                     var xhttp = new XMLHttpRequest();

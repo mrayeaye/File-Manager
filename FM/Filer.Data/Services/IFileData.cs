@@ -119,7 +119,7 @@ namespace Filer.Data.Services
 
         public IEnumerable<mFile> getAllFiles()
         {
-            mFile file = new mFile();
+           
             string cs = ConfigurationManager.ConnectionStrings["DBCS"].ConnectionString;
             using (SqlConnection con = new SqlConnection(cs))
             {
@@ -130,14 +130,20 @@ namespace Filer.Data.Services
                 SqlDataReader reader = cmd.ExecuteReader();
                 Console.WriteLine(rows + "$$$$$$$$$$$$$$$$@*&(*&#^(*&#^(&#^(#*@)&@)*@&)(@&)@(*&@)@*&)(*@");
                 
-                if (rows > 0) {
-                    for (int i=1;i<=rows;i++)
-                    {
-                        Stream stream = reader.GetStream(i);
-                        BinaryReader br = new BinaryReader(stream);
-                        file.bytes = br.ReadBytes((int)stream.Length);
-                        files.Add(file);
-                    }
+                if (rows > 0) { 
+                        while (reader.Read())
+                        {
+                            mFile file = new mFile();
+                            //Stream stream = reader.GetStream(1);
+                            file.Name = reader["Name"].ToString();
+                            file.Size = long.Parse(reader["Size"].ToString());
+                            file.bytes = (byte[])reader["FileData"];
+                            file.Dir_Id = (int)reader["Dir_Id"];
+                            //BinaryReader br = new BinaryReader(stream);
+                            //file.bytes = br.ReadBytes((int)stream.Length);                       
+                            files.Add(file);               
+                        }
+                    reader.Close();
                 }
                     
                     //files.Add(file);
