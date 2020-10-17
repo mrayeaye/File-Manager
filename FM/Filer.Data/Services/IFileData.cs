@@ -136,7 +136,9 @@ namespace Filer.Data.Services
                             mFile file = new mFile();
                             //Stream stream = reader.GetStream(1);
                             file.Name = reader["Name"].ToString();
-                            file.Size = long.Parse(reader["Size"].ToString());
+                            double size = double.Parse(reader["Size"].ToString()) / 1048576;
+                            size = Math.Truncate(size*100)/100;
+                            file.Size = size;
                             file.bytes = (byte[])reader["FileData"];
                             file.Dir_Id = (int)reader["Dir_Id"];
                             //BinaryReader br = new BinaryReader(stream);
